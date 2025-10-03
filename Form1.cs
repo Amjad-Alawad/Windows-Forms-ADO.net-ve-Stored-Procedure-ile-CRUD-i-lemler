@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
@@ -160,6 +160,7 @@ namespace uyggulama
             {
                 baglanti.Close();
             }
+            UrunListesi();
 
         }
 
@@ -183,6 +184,7 @@ namespace uyggulama
 
             da.SelectCommand.Parameters.AddWithValue("@aranan", "%" + aranan + "%");
 
+            UrunListesi();
             DataTable dt = new DataTable();
             da.Fill(dt);
 
@@ -190,6 +192,7 @@ namespace uyggulama
 
 
         }
+
         private void btnEklepr_Click(object sender, EventArgs e)
         {
             string adi = txtUrunAdi.Text.Trim();
@@ -225,6 +228,7 @@ namespace uyggulama
             {
                 baglanti.Close();
             }
+            UrunListesi();
 
         }
 
@@ -266,6 +270,7 @@ namespace uyggulama
                 baglanti.Close();
                 MessageBox.Show("Hata oluştu: " + ex.Message);
             }
+            UrunListesi();
         }
 
         private void btnGuncelle_Click(object sender, EventArgs e)
@@ -322,6 +327,7 @@ namespace uyggulama
             {
                 MessageBox.Show("Hata oluştu: " + ex.Message);
             }
+            UrunListesi();
         }
 
         private void btnAra_Click(object sender, EventArgs e)
@@ -359,6 +365,7 @@ namespace uyggulama
             {
                 MessageBox.Show("Hata oluştu: " + ex.Message);
             }
+            UrunListesi();
         }
     }
 }
